@@ -1,0 +1,23 @@
+{
+  "name": "phaser-debug-object",
+  "version": "0.1.1",
+  "description": "Adds `game.debug.object()`, a generic object display",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "start": "coffeebar --watch ."
+  },
+  "keywords": [
+    "phaser"
+  ],
+  "author": "samme",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^2.6.2"
+  },
+  "devDependencies": {
+    "coffeebar": "^1.0.0"
+  }
+}
