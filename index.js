@@ -119,13 +119,13 @@
   };
 
   Phaser.Utils.Debug.prototype.object = function(obj, x, y, options) {
-    var color, colorize, currentColor, filter, i, key, keys, label, len, precision, val;
+    var color, colorize, currentColor, filter, font, i, key, keys, label, len, precision, val;
     if (options == null) {
       options = {};
     }
     options = defaults(options);
     color = options.color, filter = options.filter, keys = options.keys, label = options.label, precision = options.precision;
-    currentColor = this.currentColor;
+    currentColor = this.currentColor, font = this.font;
     if (color === AUTO) {
       color = null;
       colorize = true;
@@ -141,7 +141,9 @@
     }
     this.start(x, y, color);
     if (label) {
+      this.context.font = "bold " + font;
       this.line(label);
+      this.context.font = font;
     }
     for (i = 0, len = keys.length; i < len; i++) {
       key = keys[i];

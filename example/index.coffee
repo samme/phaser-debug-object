@@ -13,7 +13,7 @@ window.GAME = new (Phaser.Game)(
     init: ->
       {debug} = @game
 
-      debug.font = "20px 'Input Mono', monospace"
+      debug.font = "20px monospace"
       debug.lineHeight = 25
 
       @game.forceSingleUpdate = off
@@ -57,12 +57,15 @@ window.GAME = new (Phaser.Game)(
 
       debug.object @obj, x, y,
         color: "auto"
+        label: "color: 'auto'"
         sort: yes
 
-      debug.object @stanza, x, y += 400
+      debug.object @stanza, x, y += 400,
+        label: "array"
 
       debug.object @game, x, y += 200,
         color: "auto"
+        label: "game"
         # filter: (val, key) -> not key.startsWith "_"
         # keys: Object.getOwnPropertyNames @game
         sort: yes

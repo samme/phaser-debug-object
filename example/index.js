@@ -9,7 +9,7 @@
       init: function() {
         var debug;
         debug = this.game.debug;
-        debug.font = "20px 'Input Mono', monospace";
+        debug.font = "20px monospace";
         debug.lineHeight = 25;
         this.game.forceSingleUpdate = false;
       },
@@ -39,11 +39,15 @@
         y = 20;
         debug.object(this.obj, x, y, {
           color: "auto",
+          label: "color: 'auto'",
           sort: true
         });
-        debug.object(this.stanza, x, y += 400);
+        debug.object(this.stanza, x, y += 400, {
+          label: "array"
+        });
         debug.object(this.game, x, y += 200, {
           color: "auto",
+          label: "game",
           sort: true
         });
       },

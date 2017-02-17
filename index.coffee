@@ -88,7 +88,7 @@ Phaser.Utils.Debug::object = (obj, x, y, options = {}) ->
   options = defaults options
 
   {color, filter, keys, label, precision} = options
-  {currentColor} = this
+  {currentColor, font} = this
 
   if color is AUTO
     color = null
@@ -104,7 +104,9 @@ Phaser.Utils.Debug::object = (obj, x, y, options = {}) ->
   @start x, y, color
 
   if label
+    @context.font = "bold #{font}"
     @line label
+    @context.font = font
 
   for key in keys
     val = obj[key]
