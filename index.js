@@ -70,12 +70,14 @@
         return colors["null"];
       case val === val:
         return colors.nan;
+      case !(val instanceof Date):
+        return colors.date;
       case !(val instanceof RegExp):
         return colors.regexp;
       case !(typ === OBJECT && val.constructor !== Object):
         return colors.special;
       default:
-        return colors[typeof val] || colors["default"];
+        return colors[typ] || colors["default"];
     }
   };
 

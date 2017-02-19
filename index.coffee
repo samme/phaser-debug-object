@@ -51,12 +51,14 @@ colorForValue = (val) ->
       colors.null
     when val isnt val
       colors.nan
+    when val instanceof Date
+      colors.date
     when val instanceof RegExp
       colors.regexp
     when typ is OBJECT and val.constructor isnt Object
       colors.special
     else
-      colors[typeof val] or colors.default
+      colors[typ] or colors.default
 
 defaults = (target) ->
   for key, val of defaultOptions when not (key of target)
