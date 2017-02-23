@@ -9,6 +9,7 @@ Use
 ```javascript
 game.debug.object(obj, x, y, {
   // Options: (optional; these are defaults)
+  boldLabel: true,
   color:     'white', // 'auto' to color by value type
   filter:    null,    // (val, key) -> true (include) or false (skip)
   keys:      null,    // ['key', …] : Include only these keys

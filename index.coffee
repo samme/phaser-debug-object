@@ -36,6 +36,7 @@ colors =
   undefined : gray
 
 defaultOptions =
+  boldLabel: yes
   color: WHITE,
   filter: null
   keys: null
@@ -87,7 +88,7 @@ formatValue = (val, precision) ->
 Phaser.Utils.Debug::object = (obj, x, y, options = {}) ->
   options = defaults options
 
-  {color, filter, keys, label, precision} = options
+  {boldLabel, color, filter, keys, label, precision} = options
   {currentColor, font} = this
 
   if color is AUTO
@@ -104,9 +105,9 @@ Phaser.Utils.Debug::object = (obj, x, y, options = {}) ->
   @start x, y, color
 
   if label
-    @context.font = "bold #{font}"
+    @context.font = "bold #{font}" if boldLabel
     @line label
-    @context.font = font
+    @context.font = font if boldLabel
 
   for key in keys
     val = obj[key]
