@@ -1,7 +1,4 @@
-Phaser Debug Object
-===================
-
-Generic object display with `game.debug.object()`.
+![Screenshot](https://samme.github.io/phaser-debug-object/screenshot.png)
 
 Use
 ---
