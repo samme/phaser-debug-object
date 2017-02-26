@@ -7,7 +7,9 @@
     "example": "example"
   },
   "scripts": {
-    "start": "coffeebar --watch ."
+    "start": "coffeebar --watch .",
+    "preversion": "eslint .",
+    "pub": "np --no-cleanup"
   },
   "keywords": [
     "phaser"
