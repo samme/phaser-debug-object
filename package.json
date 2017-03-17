@@ -21,5 +21,13 @@
   },
   "devDependencies": {
     "coffeebar": "^1.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samme/phaser-debug-object.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samme/phaser-debug-object/issues"
+  },
+  "homepage": "https://github.com/samme/phaser-debug-object#readme"
 }
