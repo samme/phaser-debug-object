@@ -1,3 +1,5 @@
+Adds `game.debug.object()`, a generic object display.
+
 ![Screenshot](https://samme.github.io/phaser-debug-object/screenshot.png)
 
 Use
@@ -9,7 +11,7 @@ game.debug.object(obj, x, y, {
   boldLabel: true,
   color:     'white', // 'auto' to color by value type
   filter:    null,    // (val, key) -> true (include) or false (skip)
-  keys:      null,    // ['key', …] : Include only these keys
+  keys:      null,    // ['key', …] : Include only these keys. You can get non-enumerable and inherited properties this way.
   label:     null,    // Printed at top
   precision: 2,       // Number precision (decimal digits)
   sort:      false    // Sort by key
