@@ -111,7 +111,7 @@
       case !(typ === OBJECT && (val != null ? (ref = val.constructor) != null ? ref.name : void 0 : void 0)):
         return val.constructor.name;
       case typeof val !== FUNCTION:
-        return "[Function]";
+        return "[function " + val.name + "]";
       case !(val != null ? val.toString : void 0):
         return val.toString();
       default:

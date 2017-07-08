@@ -79,7 +79,7 @@ formatValue = (val, precision) ->
     when typ is OBJECT and val?.constructor?.name
       val.constructor.name
     when typeof val is FUNCTION
-      "[Function]"
+      "[function #{val.name}]"
     when val?.toString
       val.toString()
     else
