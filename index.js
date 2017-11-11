@@ -120,12 +120,12 @@
   };
 
   Phaser.Utils.Debug.prototype.object = function(obj, x, y, options) {
-    var boldLabel, color, colorize, currentColor, filter, font, i, key, keys, label, len, precision, val;
+    var boldLabel, color, colorize, currentColor, filter, font, i, key, keys, label, len, map, precision, val;
     if (options == null) {
       options = {};
     }
     options = defaults(options);
-    boldLabel = options.boldLabel, color = options.color, filter = options.filter, keys = options.keys, label = options.label, precision = options.precision;
+    boldLabel = options.boldLabel, color = options.color, filter = options.filter, keys = options.keys, label = options.label, map = options.map, precision = options.precision;
     currentColor = this.currentColor, font = this.font;
     if (color === AUTO) {
       color = null;
@@ -134,11 +134,14 @@
     if (color == null) {
       color = WHITE;
     }
-    if (!keys) {
+    if (keys == null) {
       keys = Object.keys(obj);
     }
     if (options.sort) {
       keys.sort();
+    }
+    if (map) {
+      obj = obj.map(map);
     }
     this.start(x, y, color);
     if (label) {

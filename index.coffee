@@ -88,19 +88,21 @@ formatValue = (val, precision) ->
 Phaser.Utils.Debug::object = (obj, x, y, options = {}) ->
   options = defaults options
 
-  {boldLabel, color, filter, keys, label, precision} = options
+  {boldLabel, color, filter, keys, label, map, precision} = options
   {currentColor, font} = this
 
   if color is AUTO
     color = null
     colorize = yes
 
-  unless color?
-    color = WHITE
+  color ?= WHITE
 
-  unless keys
-    keys = Object.keys obj
+  keys ?= Object.keys obj
+
   keys.sort() if options.sort
+
+  if map
+    obj = obj.map map
 
   @start x, y, color
 
