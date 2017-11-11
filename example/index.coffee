@@ -3,7 +3,7 @@
 window.GAME = new (Phaser.Game)(
   antialias: no
   height: 2000
-  # renderer: Phaser.AUTO
+  renderer: Phaser.CANVAS
   # resolution: 1
   # scaleMode: Phaser.ScaleManager.NO_SCALE
   # transparent: false
@@ -47,8 +47,6 @@ window.GAME = new (Phaser.Game)(
       # @game.enableStep()
       return
 
-    update: ->
-
     render: ->
       {debug} = @game
 
@@ -62,6 +60,10 @@ window.GAME = new (Phaser.Game)(
 
       debug.object @stanza, x, y += 400,
         label: "array"
+
+      debug.object @stanza, x, y += 200,
+        label: "array (map)"
+        map: (val) -> "#{val.slice 0, 10} …"
 
       debug.object @game, x, y += 200,
         color: "auto"

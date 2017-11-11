@@ -4,6 +4,7 @@
   window.GAME = new Phaser.Game({
     antialias: false,
     height: 2000,
+    renderer: Phaser.CANVAS,
     width: 800,
     state: {
       init: function() {
@@ -31,7 +32,6 @@
         };
         this.stanza = ["Twas brillig, and the slithy toves", "Did gyre and gimble in the wabe:", "All mimsy were the borogoves,", "And the mome raths outgrabe."];
       },
-      update: function() {},
       render: function() {
         var debug, x, y;
         debug = this.game.debug;
@@ -44,6 +44,12 @@
         });
         debug.object(this.stanza, x, y += 400, {
           label: "array"
+        });
+        debug.object(this.stanza, x, y += 200, {
+          label: "array (map)",
+          map: function(val) {
+            return (val.slice(0, 10)) + " …";
+          }
         });
         debug.object(this.game, x, y += 200, {
           color: "auto",
